@@ -1,0 +1,15 @@
+#slider {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+#slider::-webkit-scrollbar {
+  display: none;
+}
+
+#main-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
