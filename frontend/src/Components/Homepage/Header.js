@@ -10,7 +10,7 @@ const Header = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <Link to="/">
           <div className="text-2xl md:text-3xl font-bold tracking-wide mb-4 md:mb-0 cursor-pointer">
-            <span className="text-purple-500">Quiz</span>Wiz
+            <span className="text-purple-500">Quizz</span>Wiz
           </div>
         </Link>
         {(user === undefined || user === null) ? (
