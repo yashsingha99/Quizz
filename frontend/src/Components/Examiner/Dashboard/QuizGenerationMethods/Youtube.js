@@ -2,9 +2,9 @@ import React from "react";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import YOUTUBE_SVG from "./../../../../Assets/icons/youtube-svgrepo-com (1).svg";
-import { YouTube } from "@mui/icons-material";
+// import { YouTube } from "@mui/icons-material";
 
-function Youtube({ setMethod }) {
+function YouTube({ setMethod }) {
   return (
     <div className="bg-gray-100 flex flex-col min-h-screen">
       <button
@@ -38,7 +38,7 @@ function Youtube({ setMethod }) {
             </label>
             <div class="relative">
               <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <YouTube style={{ color: "grey" }}></YouTube>
+                {/* <YouTube style={{ color: "grey" }}></YouTube> */}
               </div>
               <input
                 class="block w-full p-4 ps-12  text-white-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
@@ -75,4 +75,4 @@ function Youtube({ setMethod }) {
   );
 }
 
-export default Youtube;
+export default YouTube;
