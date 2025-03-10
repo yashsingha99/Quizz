@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const examinerSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -36,12 +36,20 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  section:[{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Section"
+  }],
+  role:{
+    type: String,
+    default: "teacher"
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-const User = mongoose.model("Examiner", userSchema);
+const User = mongoose.model("Examiner", examinerSchema);
 
 export default User;

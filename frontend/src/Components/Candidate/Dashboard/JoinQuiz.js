@@ -30,7 +30,7 @@ function JoinQuiz() {
         <input
           type="text"
           placeholder="Enter Quiz Code"
-          className="w-full border border-gray-300 rounded-md p-3 mb-4 focus:outline-none focus:border-blue-300 border-4 text-blue-800 font-bold tracking-wider text-center"
+          className="w-full  border-gray-300 rounded-md p-3 mb-4 focus:outline-none focus:border-blue-300 border-4 text-blue-800 font-bold tracking-wider text-center"
           onChange={(e) => setCode(e.target.value)}
         />
 

@@ -6,9 +6,11 @@ import AddCircleOutlineSharpIcon from "@mui/icons-material/AddCircleOutlineSharp
 import InsightsSharpIcon from "@mui/icons-material/InsightsSharp";
 import Statistics from "./Statistics";
 import CreateQuiz from "./CreateQuiz";
+import { SlidersHorizontal, X } from 'lucide-react';
 function Main() {
   let { user, setUser } = useAppContext();
   const [showStatistics, setShowStatistics] = useState(true);
+  const [sliderOpen, setSliderOpen] = useState(false)
   const navigate = useNavigate();
   useEffect(() => {
     user= JSON.parse(localStorage.getItem("user"))
@@ -27,8 +29,9 @@ function Main() {
   }
 
   return (
-    <div className="flex flex-row w-full h-screen">
-      <nav className="bg-purple-200 w-1/5 border-r-2 text-blue-950 border-purple-300 justify-between flex flex-col">
+    <div className="flex relative flex-row w-full h-screen">
+     { !sliderOpen && <nav className="bg-purple-200 relative w-1/5 border-r-2 text-blue-950 border-purple-300 justify-between flex flex-col">
+        <div className="absolute right-2 top-2"> <X color="#A855F7" className="cursor-pointer" onClick={() => setSliderOpen((P) => !P)} /> </div>
         <Link to="/">
           <div className="text-3xl text-center flex justify-center items-center mt-10 md:text-4xl font-bold tracking-wide mb-4 md:mb-0 cursor-pointer">
             <span className="text-purple-500">Quiz</span>Wiz
@@ -75,8 +78,11 @@ function Main() {
           <LogoutIcon></LogoutIcon>
           <h1 classNameName="ml-2 font-rubik font-semibold">Log out</h1>
         </button>
-      </nav>
-      <div className=" w-4/5 overflow-y-scroll overflow-x-hidden">
+      </nav>}
+      { sliderOpen && 
+      <SlidersHorizontal color="#A855F7" className="cursor-pointer absolute top-4 left-4" onClick={() => setSliderOpen((P) => !P)} />
+      } 
+      <div className=" w-[100%] overflow-y-scroll overflow-x-hidden">
         {showStatistics ? <Statistics></Statistics> : <CreateQuiz></CreateQuiz>}
       </div>
     </div>

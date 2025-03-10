@@ -27,6 +27,7 @@ export const quizSchema = new mongoose.Schema({
     default: "Random quiz",
   },
 });
+
 export const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
